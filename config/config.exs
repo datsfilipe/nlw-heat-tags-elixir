@@ -17,6 +17,9 @@ config :nlw_tags, NlwTagsWeb.Endpoint,
   pubsub_server: NlwTags.PubSub,
   live_view: [signing_salt: "iVmqGAHK"]
 
+config :nlw_tags, NlwTags.Scheduler, jobs: [
+  {"0 0 * * *",   {NlwTags.Tags.Count, :call, []}}
+]
 
 # Configures the mailer
 #
