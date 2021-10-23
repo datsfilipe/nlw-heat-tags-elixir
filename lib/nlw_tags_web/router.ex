@@ -8,6 +8,7 @@ defmodule NlwTagsWeb.Router do
   scope "/api", NlwTagsWeb do
     pipe_through :api
 
+    post "/message", MessagesController, :create
   end
 
   # Enables LiveDashboard only for development
